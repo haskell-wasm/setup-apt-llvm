@@ -1,0 +1,8 @@
+name: setup-apt-llvm
+description: Setup apt.llvm.org repositories
+runs:
+  using: composite
+  steps:
+    - if: ${{ runner.os == 'Linux' }}
+      run: ${{ github.action_path }}/setup.sh
+      shell: bash
