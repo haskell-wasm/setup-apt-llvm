@@ -4,7 +4,7 @@ set -euo pipefail
 
 LSB_CODENAME=$(lsb_release -cs)
 
-curl -f -L --retry 5 https://apt.llvm.org/llvm-snapshot.gpg.key | sudo gpg --dearmor --no-tty -o /usr/share/keyrings/llvm-snapshot.gpg
+curl -f -L --retry 5 https://apt.llvm.org/llvm-snapshot.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/llvm-snapshot.gpg --yes
 
 {
   echo "deb [signed-by=/usr/share/keyrings/llvm-snapshot.gpg] https://apt.llvm.org/$LSB_CODENAME llvm-toolchain-$LSB_CODENAME main"
